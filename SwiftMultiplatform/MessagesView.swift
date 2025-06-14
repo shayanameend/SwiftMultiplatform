@@ -17,11 +17,13 @@ struct MessagesView: View {
     ]
     
     var body: some View {
-        ForEach(messages) { message in
-            TextView(
-                text: message.text,
-                color: message.color
-            )
+        VStack(alignment: .leading) {
+            ForEach(messages) { message in
+                TextView(
+                    text: message.text,
+                    color: message.color
+                )
+            }
         }
     }
 }
