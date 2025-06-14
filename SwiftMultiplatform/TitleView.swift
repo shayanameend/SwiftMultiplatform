@@ -10,8 +10,16 @@ import SwiftUI
 struct TitleView: View {
     let lineWidth = 15.0
     let diameter = 70.0
-    
+        
+    @State private var subtitle = "Exploring iOS Programming"
     @State private var isRotated = false
+    
+    let subtitles = [
+        "Exploring iOS Programming",
+        "Learning how to bake",
+        "Programming recipies",
+        "A quest for knowlegde",
+    ]
     
     var angle: Angle {
         isRotated ? .zero : .degrees(360)
@@ -31,9 +39,14 @@ struct TitleView: View {
                     .font(.largeTitle)
                     .fontWeight(.semibold)
                 
-                Text("Exploring iOS Programming")
+                Text(subtitle)
                     .font(.headline)
                     .fontWeight(.thin)
+            }
+            .onTapGesture {
+                withAnimation {
+                    subtitle = subtitles.randomElement() ?? subtitle
+                }
             }
             
             Spacer()
