@@ -11,10 +11,10 @@ struct TitleView: View {
     let lineWidth = 15.0
     let diameter = 70.0
         
-    @State private var subtitle = "Exploring iOS Programming"
+    @State private var subtitle: LocalizedStringKey = "Exploring iOS Programming"
     @State private var isRotated = false
     
-    let subtitles = [
+    let subtitles: [LocalizedStringKey] = [
         "Exploring iOS Programming",
         "Learning how to bake",
         "Programming recipies",
