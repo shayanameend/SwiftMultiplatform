@@ -18,11 +18,10 @@ struct MainView: View {
     var isIPhonePortrait: Bool {
         horizontalSizeClass == .compact && verticalSizeClass == .regular
     }
-
+    
     var isIPhoneLandscape: Bool {
         horizontalSizeClass == .regular && verticalSizeClass == .compact
     }
-
     
     var body: some View {
         if isIPhonePortrait || isIPad {
