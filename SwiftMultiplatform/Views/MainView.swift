@@ -11,10 +11,23 @@ struct MainView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     
+    var isIPad: Bool {
+        horizontalSizeClass == .regular && verticalSizeClass == .regular
+    }
+    
+    var isIPhonePortrait: Bool {
+        horizontalSizeClass == .compact && verticalSizeClass == .regular
+    }
+
+    var isIPhoneLandscape: Bool {
+        horizontalSizeClass == .regular && verticalSizeClass == .compact
+    }
+
+    
     var body: some View {
-        if horizontalSizeClass == .compact && verticalSizeClass == .regular {
-            GreetingsView()
-        } else {
+        if isIPhonePortrait || isIPad {
+            PortraitGreetingsView()
+        } else if isIPhoneLandscape {
             LandscapeGreetingsView()
         }
     }
