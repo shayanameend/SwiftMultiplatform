@@ -1,26 +1,24 @@
 //
-//  ContentView.swift
+//  LandscapeGreetingsView.swift
 //  SwiftMultiplatform
 //
-//  Created by Shayan Ameen on 6/11/25.
+//  Created by Shayan Ameen on 6/15/25.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct LandscapeGreetingsView: View {
     var body: some View {
         ZStack {
             BackgroundView()
             
-            VStack(alignment: .leading) {
-                TitleView()
+            HStack {
+                VerticalTitleView()
                 
                 Spacer()
                 
                 MessagesView()
                 
-                Spacer()
-                Spacer()
             }
             .padding()
         }
@@ -28,5 +26,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    LandscapeGreetingsView()
 }
